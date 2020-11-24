@@ -1,0 +1,1 @@
+<?php if (!@include_once('../vendor/autoload.php')) echo "You must install package to start app.";
