@@ -16,11 +16,11 @@ run:
 
 # This command will run all tests suite
 tests: install
-	./vendor/bin/phpunit tests
+	./vendor/bin/phpunit tests --colors
 
 # This command launch phpunit-watcher to execute tests suite each time file saved
 tests-watcher: install
-	./vendor/bin/phpunit-watcher watch
+	./vendor/bin/phpunit-watcher watch 
 
 # This command combine install and run command
 install-run: install run

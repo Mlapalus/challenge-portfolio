@@ -79,7 +79,7 @@ class Formation
    *
    * @return string
    */
-  public function geTitle(): string
+  public function getTitle(): string
   {
     return $this->title;
   }
@@ -121,7 +121,7 @@ class Formation
    *
    * @return string
    */
-  public function geGraduate(): string
+  public function getGraduate(): string
   {
     return $this->graduate;
   }
@@ -184,7 +184,7 @@ class Formation
    *
    * @return string
    */
-  public function geDescription(): string
+  public function getDescription(): string
   {
     return $this->description;
   }

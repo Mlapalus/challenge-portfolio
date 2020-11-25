@@ -1,3 +1,4 @@
+hideManual: true
 watch:
   directories:
     - src
@@ -10,4 +11,3 @@ phpunit:
   binaryPath: vendor/bin/phpunit
   arguments: 'tests --stop-on-failure'
   timeout: 180
-hideManual: true
