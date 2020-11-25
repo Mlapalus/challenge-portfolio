@@ -7,7 +7,7 @@ use DateTime;
 /**
  * Experience
  */
-class Experience
+class Experience extends Model
 {
 
   private $userId;
@@ -16,6 +16,8 @@ class Experience
   private $description;
   private $startDate;
   private $endDate;
+
+  protected $table = "EXPERIENCES";
 
   /**
    * __construct
@@ -36,6 +38,7 @@ class Experience
     $this->description = $description;
     $this->startDate = $startDate;
     $this->endDate = $endDate;
+    $this->pdo = \Database::getPdo();
   }
 
   /**

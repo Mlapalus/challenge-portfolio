@@ -7,7 +7,7 @@ use DateTime;
 /**
  * Portfolio
  */
-class Portfolio
+class Portfolio extends Model
 {
 
   private $userId;
@@ -15,6 +15,8 @@ class Portfolio
   private $createdDate;
   private $description;
   private $url;
+
+  protected $table = "PORTFOLIO";
 
   /**
    * __construct
@@ -33,6 +35,7 @@ class Portfolio
     $this->createdDate = $createdDate;
     $this->description = $description;
     $this->url = $url;
+    $this->pdo = \Database::getPdo();
   }
 
   /**

@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use DateTime;
+use PhpParser\Node\Expr\AssignOp\Mod;
 
 /**
  * Formation
  */
-class Formation
+class Formation extends Model
 {
 
   private $userId;
@@ -17,6 +18,8 @@ class Formation
   private $startDate;
   private $endDate;
   private $description;
+
+  protected $table = "FORMATIONS";
 
 
   /**
@@ -40,6 +43,7 @@ class Formation
     $this->startDate = $startDate;
     $this->endDate = $endDate;
     $this->description = $description;
+    $this->pdo = \Database::getPdo();
   }
 
   /**

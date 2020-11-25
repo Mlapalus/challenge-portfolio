@@ -7,7 +7,7 @@ use DateTime;
 /**
  * User
  */
-class User
+class User extends Model
 {
 
   private $lastName;
@@ -15,6 +15,9 @@ class User
   private $firstName;
   private $birthDate;
   private $description;
+
+  protected $table = "USER";
+
 
   /**
    * __construct
@@ -33,6 +36,7 @@ class User
     $this->firstName = $firstName;
     $this->birthDate = $birthDate;
     $this->description = $description;
+    $this->pdo = \Database::getPdo();
   }
 
   /**
