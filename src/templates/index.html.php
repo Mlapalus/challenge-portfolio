@@ -14,7 +14,7 @@ $description = $params['data']["DESCRIPTION"];
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Date de Naissance:<?= $birthDate ?></li>
-    <li class="list-group-item">A mon sujet:<?= $description ?></li>
+    <li class="list-group-item">A mon sujet: </br><?= $description ?></li>
   </ul>
 </div>
 

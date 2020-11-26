@@ -26,6 +26,27 @@ class PortfolioTags extends Model
     $this->tag = $tag;
   }
 
+
+
+  /**
+   * findAll
+   *
+   * @param  mixed $order
+   * @return array
+   */
+  public function findAll(int $id, ?string $order = ""): array
+  {
+
+    $sql = "SELECT * FROM {$this->table}";
+    if ($order) {
+      $sql .= " ORDER BY " . $order;
+    }
+
+    $resultats = $this->pdo->query($sql);
+    return $resultats->fetchAll();
+  }
+
+
   /**
    * getPortfolioId
    *

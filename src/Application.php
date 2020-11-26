@@ -12,8 +12,8 @@ class Application
 
     $router = new Router($_SERVER['REQUEST_URI']);
     $router->get('/', 'App\Controllers\PagesController@index');
-    $router->get('/experience', 'App\Controllers\PagesController@experience');
-    $router->get('/formation', 'App\Controllers\PagesController@formation');
+    $router->get('/cv', 'App\Controllers\PagesController@cv');
+    $router->get('/portfolio', 'App\Controllers\PagesController@portfolio');
 
     $router->run();
   }

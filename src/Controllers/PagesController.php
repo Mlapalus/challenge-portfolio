@@ -6,6 +6,8 @@ use App\Renderer;
 use App\Entity\User;
 use App\Entity\Formation;
 use App\Entity\Experience;
+use App\Entity\Portfolio;
+use App\Entity\PortfolioTags;
 
 class PagesController
 {
@@ -20,25 +22,30 @@ class PagesController
     Renderer::render('index', compact('pageTitle', 'data'));
   }
 
-  public function experience()
+  public function cv()
   {
 
     $experience = new Experience();
-    $data = $experience->find(1);
+    $dataExp = $experience->findAll(1, 'START_DATE DESC');
+    $formation = new Formation();
+    $dataFormation = $formation->findAll(1);
 
-    $pageTitle = "Experiences";
+    $pageTitle = "Curriculum Vitae";
 
-    Renderer::render('experiences', compact('pageTitle', 'data'));
+    Renderer::render('cv', compact('pageTitle', 'dataExp', 'dataFormation'));
   }
 
-  public function formation()
+  public function portfolio()
   {
 
-    $formation = new Formation();
-    $data = $formation->find(1);
+    $portfolio = new Portfolio();
+    $dataPortfolio = $portfolio->findAll(1);
 
-    $pageTitle = "Formations";
+    $portfolioTags = new PortfolioTags();
+    $dataPortfolioTags = $portfolioTags->findAll(1);
 
-    Renderer::render('formations', compact('pageTitle', 'data'));
+    $pageTitle = "Portfolio";
+
+    Renderer::render('portfolio', compact('pageTitle', 'dataPortfolio', 'dataPortfolioTags'));
   }
 }
