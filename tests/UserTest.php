@@ -39,6 +39,6 @@ class UserTest extends TestCase
     $user = new User();
     $id = 1;
     $result = $user->find($id);
-    $this->assertEquals('Doe', $result['LAST_NAME']);
+    $this->assertEquals('Lapalus', $result['LAST_NAME']);
   }
 }
