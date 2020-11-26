@@ -32,20 +32,14 @@ CREATE TABLE `EXPERIENCES`
 (
   `ID` int NOT NULL AUTO_INCREMENT,
   `USER_ID` int NOT NULL,
-  `TITLE` varchar
-(20) NOT NULL,
-  `COMPANY` varchar
-(20) NOT NULL,
+  `TITLE` varchar(100) NOT NULL,
+  `COMPANY` varchar(20) NOT NULL,
   `DESCRIPTION` longtext,
   `START_DATE` date NOT NULL,
   `END_DATE` date DEFAULT NULL,
-  PRIMARY KEY
-(`ID`),
-  KEY `EXPERIENCES_USER_ID_fk`
-(`USER_ID`),
-  CONSTRAINT `EXPERIENCES_USER_ID_fk` FOREIGN KEY
-(`USER_ID`) REFERENCES `USER`
-(`ID`)
+  PRIMARY KEY(`ID`),
+  KEY `EXPERIENCES_USER_ID_fk`(`USER_ID`),
+  CONSTRAINT `EXPERIENCES_USER_ID_fk` FOREIGN KEY(`USER_ID`) REFERENCES `USER`(`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,37 +49,22 @@ CREATE TABLE `EXPERIENCES`
 
 LOCK TABLES `EXPERIENCES` WRITE;
 /*!40000 ALTER TABLE `EXPERIENCES` DISABLE KEYS */;
-INSERT INTO `EXPERIENCES` (`
-ID`,
-`USER_ID
-`, `TITLE`, `COMPANY`, `DESCRIPTION`, `START_DATE`, `END_DATE`) VALUES
+INSERT INTO `EXPERIENCES` (`ID`,`USER_ID`, `TITLE`, `COMPANY`, `DESCRIPTION`, `START_DATE`, `END_DATE`) VALUES
 (1,1,'Entrepreneur Individuel','Le Bateau Ivre','Entrepreneur dans le milieu de la restauration','2003-05-14','2018-11-01');
 
-INSERT INTO `EXPERIENCES` (`
-ID`,
-`USER_ID
-`, `TITLE`, `COMPANY`, `DESCRIPTION`, `START_DATE`, `END_DATE`) VALUES
+INSERT INTO `EXPERIENCES` (`ID`,`USER_ID`, `TITLE`, `COMPANY`, `DESCRIPTION`, `START_DATE`, `END_DATE`) VALUES
 (2,1,'Reconversion dans le WEB','MLapalus','Ingénieur en informatique en reconversion dans le WEB','2019-03-01',NULL);
 
 
-INSERT INTO `EXPERIENCES` (`
-ID`,
-`USER_ID
-`, `TITLE`, `COMPANY`, `DESCRIPTION`, `START_DATE`, `END_DATE`) VALUES
+INSERT INTO `EXPERIENCES` (`ID`,`USER_ID`, `TITLE`, `COMPANY`, `DESCRIPTION`, `START_DATE`, `END_DATE`) VALUES
 (3,1,'Ingénieur R&D','Corvis Algety',"Développement et validation de cartes numériques et de composants programmables dans des projets de transmission sur fibre optique.",'1999-10-01','2002-12-31');
 
 
-INSERT INTO `EXPERIENCES` (`
-ID`,
-`USER_ID
-`, `TITLE`, `COMPANY`, `DESCRIPTION`, `START_DATE`, `END_DATE`) VALUES
+INSERT INTO `EXPERIENCES` (`ID`,`USER_ID`, `TITLE`, `COMPANY`, `DESCRIPTION`, `START_DATE`, `END_DATE`) VALUES
 (4,1,'Ingénieur R&D','ALCATEL CIT',"Développement en VHDL dans les telecoms",'1998-01-01','1999-10-01');
 
 
-INSERT INTO `EXPERIENCES` (`
-ID`,
-`USER_ID
-`, `TITLE`, `COMPANY`, `DESCRIPTION`, `START_DATE`, `END_DATE`) VALUES
+INSERT INTO `EXPERIENCES` (`ID`,`USER_ID`, `TITLE`, `COMPANY`, `DESCRIPTION`, `START_DATE`, `END_DATE`) VALUES
 (5,1,'Ingénieur R&D','DGSE',"Service militaire en scientifique du contingent. Programmations de circuits intégrés",'1996-09-01','1997-10-01');
 
 UNLOCK TABLES;
@@ -101,22 +80,15 @@ CREATE TABLE `FORMATIONS`
 (
   `ID` int NOT NULL AUTO_INCREMENT,
   `USER_ID` int NOT NULL,
-  `TITLE` varchar
-(20) NOT NULL,
-  `SCHOOL` varchar
-(20) NOT NULL,
-  `GRADUATE` varchar
-(20) DEFAULT NULL,
+  `TITLE` varchar(100) NOT NULL,
+  `SCHOOL` varchar(20) NOT NULL,
+  `GRADUATE` varchar(20) DEFAULT NULL,
   `START_DATE` date NOT NULL,
   `END_DATE` date DEFAULT NULL,
   `DESCRIPTION` longtext,
-  PRIMARY KEY
-(`ID`),
-  KEY `FORMATIONS_USER_ID_fk`
-(`USER_ID`),
-  CONSTRAINT `FORMATIONS_USER_ID_fk` FOREIGN KEY
-(`USER_ID`) REFERENCES `USER`
-(`ID`)
+  PRIMARY KEY(`ID`),
+  KEY `FORMATIONS_USER_ID_fk`(`USER_ID`),
+  CONSTRAINT `FORMATIONS_USER_ID_fk` FOREIGN KEY(`USER_ID`) REFERENCES `USER`(`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -126,18 +98,11 @@ CREATE TABLE `FORMATIONS`
 
 LOCK TABLES `FORMATIONS` WRITE;
 /*!40000 ALTER TABLE `FORMATIONS` DISABLE KEYS */;
-INSERT INTO `FORMATIONS` (`
-ID`,
-`USER_ID
-`, `TITLE`, `SCHOOL`, `GRADUATE`, `START_DATE`, `END_DATE`, `DESCRIPTION`) VALUES
+INSERT INTO `FORMATIONS` (`ID`,`USER_ID`, `TITLE`, `SCHOOL`, `GRADUATE`, `START_DATE`, `END_DATE`, `DESCRIPTION`) VALUES
 (1,1,'Microélectronique','Jussieu UPMC','DEA','1995-09-01','1996-06-30',"DEA en même temps que la dernière année de mon cursus d'Ingénieur. Microélectronique et Systèmes Intégrés. Conception d'un coeur de processeur RISC en VHDL");
 
-INSERT INTO `FORMATIONS` (`
-ID`,
-`USER_ID
-`, `TITLE`, `SCHOOL`, `GRADUATE`, `START_DATE`, `END_DATE`, `DESCRIPTION`) VALUES
+INSERT INTO `FORMATIONS` (`ID`,`USER_ID`, `TITLE`, `SCHOOL`, `GRADUATE`, `START_DATE`, `END_DATE`, `DESCRIPTION`) VALUES
 (2,1,'Ingénieur en Informatique et en Electronique','EFREI - Villejuif','Ingénieur','1991-09-01','1996-06-30',"Diplôme d'ingénieur généraliste en 5 ans après le BAC avec PREPA intégré. ");
-
 
 /*!40000 ALTER TABLE `FORMATIONS` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -153,19 +118,13 @@ CREATE TABLE `PORTFOLIO`
 (
   `ID` int NOT NULL AUTO_INCREMENT,
   `USER_ID` int NOT NULL,
-  `TITLE` varchar
-(50) NOT NULL,
+  `TITLE` varchar(50) NOT NULL,
   `CREATION_DATE` date NOT NULL,
   `DESCRIPTION` longtext,
-  `URL` varchar
-(100) DEFAULT NULL,
-  PRIMARY KEY
-(`ID`),
-  KEY `PORTFOLIO_USER_ID_fk`
-(`USER_ID`),
-  CONSTRAINT `PORTFOLIO_USER_ID_fk` FOREIGN KEY
-(`USER_ID`) REFERENCES `USER`
-(`ID`)
+  `URL` varchar(100) DEFAULT NULL,
+  PRIMARY KEY(`ID`),
+  KEY `PORTFOLIO_USER_ID_fk`(`USER_ID`),
+  CONSTRAINT `PORTFOLIO_USER_ID_fk` FOREIGN KEY(`USER_ID`) REFERENCES `USER`(`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -176,16 +135,10 @@ CREATE TABLE `PORTFOLIO`
 LOCK TABLES `PORTFOLIO` WRITE;
 /*!40000 ALTER TABLE `PORTFOLIO` DISABLE KEYS */;
 
-INSERT INTO `PORTFOLIO` (`
-ID`,
-`USER_ID
-`, `TITLE`, `CREATION_DATE`, `DESCRIPTION`, `URL`) VALUES
+INSERT INTO `PORTFOLIO` (`ID`,`USER_ID`, `TITLE`, `CREATION_DATE`, `DESCRIPTION`, `URL`) VALUES
 (1,1,'Bibiche Coiffure','2020-04-01',"Création d'un site pour un salon de coiffure de style Afro. Création en langage PHP.",'http://bibiche-coiffure.fr');
 
-INSERT INTO `PORTFOLIO` (`
-ID`,
-`USER_ID
-`, `TITLE`, `CREATION_DATE`, `DESCRIPTION`, `URL`) VALUES
+INSERT INTO `PORTFOLIO` (`ID`,`USER_ID`, `TITLE`, `CREATION_DATE`, `DESCRIPTION`, `URL`) VALUES
 (2,1,'TOP SERVICES','2020-02-01',"Création d'un site pour une société de nettoyage industriel. Création en HTML / CSS.",'http://top-service-france.fr');
 
 
@@ -203,15 +156,10 @@ CREATE TABLE `PORTFOLIO_TAGS`
 (
   `ID` int NOT NULL AUTO_INCREMENT,
   `PORTFOLIO_ID` int NOT NULL,
-  `TAG` varchar
-(20) NOT NULL,
-  PRIMARY KEY
-(`ID`),
-  KEY `PORTFOLIO_TAGS_PORTFOLIO_ID_fk`
-(`PORTFOLIO_ID`),
-  CONSTRAINT `PORTFOLIO_TAGS_PORTFOLIO_ID_fk` FOREIGN KEY
-(`PORTFOLIO_ID`) REFERENCES `PORTFOLIO`
-(`ID`)
+  `TAG` varchar(20) NOT NULL,
+  PRIMARY KEY(`ID`),
+  KEY `PORTFOLIO_TAGS_PORTFOLIO_ID_fk`(`PORTFOLIO_ID`),
+  CONSTRAINT `PORTFOLIO_TAGS_PORTFOLIO_ID_fk` FOREIGN KEY(`PORTFOLIO_ID`) REFERENCES `PORTFOLIO`(`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -221,10 +169,7 @@ CREATE TABLE `PORTFOLIO_TAGS`
 
 LOCK TABLES `PORTFOLIO_TAGS` WRITE;
 /*!40000 ALTER TABLE `PORTFOLIO_TAGS` DISABLE KEYS */;
-INSERT INTO `PORTFOLIO_TAGS` (`
-ID`,
-`PORTFOLIO_ID
-`, `TAG`) VALUES
+INSERT INTO `PORTFOLIO_TAGS` (`ID`,`PORTFOLIO_ID`, `TAG`) VALUES
 (1,1,'HTML'),
 (2,1,'CSS'),
 (3,1,'JAVASCRIPT'),
@@ -244,18 +189,13 @@ DROP TABLE IF EXISTS `USER`;
 CREATE TABLE `USER`
 (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `LAST_NAME` varchar
-(50) NOT NULL,
-  `USERNAME` varchar
-(20) NOT NULL,
-  `FIRST_NAME` varchar
-(50) NOT NULL,
+  `LAST_NAME` varchar(50) NOT NULL,
+  `USERNAME` varchar(20) NOT NULL,
+  `FIRST_NAME` varchar(50) NOT NULL,
   `BIRTH_DATE` date NOT NULL,
   `DESCRIPTION` longtext,
-  PRIMARY KEY
-(`ID`),
-  UNIQUE KEY `USER_USERNAME_uindex`
-(`USERNAME`)
+  PRIMARY KEY(`ID`),
+  UNIQUE KEY `USER_USERNAME_uindex`(`USERNAME`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -266,9 +206,7 @@ CREATE TABLE `USER`
 LOCK TABLES `USER` WRITE;
 /*!40000 ALTER TABLE `USER` DISABLE KEYS */;
 INSERT INTO `USER`
-  (`ID`, `LAST_NAME
-
-`, `USERNAME`, `FIRST_NAME`, `BIRTH_DATE`, `DESCRIPTION`) 
+  (`ID`, `LAST_NAME`, `USERNAME`, `FIRST_NAME`, `BIRTH_DATE`, `DESCRIPTION`) 
   VALUES
 (1,'Lapalus','Mimi','Michel','21-06-1973',"Jeune homme de 47ans, j'ai un diplôme d'ingénieur en électronique et en informatique, et un DEA en microélectronique. J'ai travaillé 5 ans dans les telecoms, puis j'ai travaillé pendant 15 ans dans la gestion d'établissements de nuit à Paris. Depuis 1 an, je me consacre à un retour dans le milieu de l'informatique. ");
 /*!40000 ALTER TABLE `USER` ENABLE KEYS */;
