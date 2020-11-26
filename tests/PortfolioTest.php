@@ -2,8 +2,6 @@
 
 namespace Test;
 
-use App\Entity\Portfolio;
-use DateTime;
 use PHPUnit\Framework\TestCase;
 
 
@@ -11,16 +9,12 @@ class PortfolioTest extends TestCase
 {
   public function testPortfolioCreation()
   {
-    $id = (int)uniqid();
-    $date = new DateTime('NOW');
 
-    $portfolio = new Portfolio(
-      $id,
-      'Titre',
-      $date,
-      "La description",
-      "mlapalus.dev@gmail.com"
-    );
+    $datas = new Datas;
+    $portfolio = $datas->getPortfolio();
+    $id = $datas->getId();
+    $date = $datas->getDate1();
+
 
     $uid = $portfolio->getId();
     $title = $portfolio->getTitle();

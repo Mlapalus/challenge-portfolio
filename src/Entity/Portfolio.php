@@ -23,7 +23,7 @@ class Portfolio extends Model
    *
    * @return void
    */
-  public function __construct(
+  public function __constructPORTFOLIO(
     int $id,
     string $title,
     DateTime $createdDate,

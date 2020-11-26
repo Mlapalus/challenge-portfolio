@@ -2,9 +2,7 @@
 
 namespace Test;
 
-use App\Entity\User;
 use PHPUnit\Framework\TestCase;
-use PDO;
 
 class DatabaseTest extends TestCase
 {
@@ -12,7 +10,6 @@ class DatabaseTest extends TestCase
   {
     $datas = new Datas;
 
-    $pdo = $datas->getPDO();
     $user = $datas->getUser();
     $experiences = $datas->getExperience();
     $formations = $datas->getFormation();

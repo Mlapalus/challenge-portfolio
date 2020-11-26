@@ -24,19 +24,20 @@ class User extends Model
    *
    * @return void
    */
-  public function __construct(
+
+  public function __constructUSER(
     string $lastName,
     string $userName,
     string $firstName,
     DateTime $birthDate,
     string $description
   ) {
+
     $this->lastName = $lastName;
     $this->userName = $userName;
     $this->firstName = $firstName;
     $this->birthDate = $birthDate;
     $this->description = $description;
-    $this->pdo = \Database::getPdo();
   }
 
   /**

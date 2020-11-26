@@ -2,10 +2,7 @@
 
 namespace Test;
 
-use App\Entity\Formation;
-use DateTime;
 use PHPUnit\Framework\TestCase;
-
 
 class FormationTest extends TestCase
 {
@@ -13,20 +10,14 @@ class FormationTest extends TestCase
   public function testFormationCreation()
   {
 
-    $date1 = new DateTime('NOW');
-    $date2 = new DateTime('22-12-2020');
+    $datas = new Datas();
+    $formation = $datas->getFormation();
 
-    $id = (int)uniqid();
 
-    $formation = new Formation(
-      $id,
-      'Title',
-      'Mon Ecole',
-      'Mon Diplome',
-      $date1,
-      $date2,
-      'Ma description'
-    );
+    $date1 = $datas->getDate1();
+    $date2 = $datas->getDate2();
+    $id = $datas->getId();
+
 
     $uid = $formation->getUserId();
     $title = $formation->getTitle();

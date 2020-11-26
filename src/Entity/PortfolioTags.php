@@ -20,11 +20,10 @@ class PortfolioTags extends Model
    * @param  mixed $tag
    * @return void
    */
-  public function __construct(int $id, string $tag)
+  public function __constructPORTFOLIO_TAGS(int $id, string $tag)
   {
     $this->portfolioId = $id;
     $this->tag = $tag;
-    $this->pdo = \Database::getPdo();
   }
 
   /**

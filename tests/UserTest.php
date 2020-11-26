@@ -2,8 +2,8 @@
 
 namespace Test;
 
-use App\Entity\User;
 use DateTime;
+use App\Entity\User;
 use PHPUnit\Framework\TestCase;
 
 
@@ -17,13 +17,9 @@ class UserTest extends TestCase
 
   public function testUserCreation()
   {
-    $user = new User(
-      'Lapalus',
-      'mimi',
-      'Michel',
-      new DateTime('21-06-1973'),
-      'Ma description'
-    );
+
+    $datas = new Datas;
+    $user = $datas->getUser();
 
     $lastName = $user->getLastName();
     $userName = $user->getUserName();
@@ -36,5 +32,13 @@ class UserTest extends TestCase
     $this->assertEquals('Michel', $firstName);
     $this->assertEquals(new DateTime('21-06-1973'), $birthday);
     $this->assertEquals('Ma description', $content);
+  }
+
+  public function testReadOneUserOnDatabase()
+  {
+    $user = new User();
+    $id = 1;
+    $result = $user->find($id);
+    $this->assertEquals('Doe', $result['LAST_NAME']);
   }
 }

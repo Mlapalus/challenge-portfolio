@@ -27,7 +27,7 @@ class Formation extends Model
    *
    * @return void
    */
-  public function __construct(
+  public function __constructFORMATIONS(
     int $userId,
     string $title,
     string $school,

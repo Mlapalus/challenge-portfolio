@@ -2,8 +2,6 @@
 
 namespace Test;
 
-use App\Entity\Experience;
-use DateTime;
 use PHPUnit\Framework\TestCase;
 
 
@@ -11,19 +9,14 @@ class ExperienceTest extends TestCase
 {
   public function testExperienceCreation()
   {
+    $datas = new Datas();
+    $experience = $datas->getExperience();
 
-    $date1 = new DateTime('NOW');
-    $date2 = new DateTime('22-12-2020');
-    $id = (int)uniqid();
 
-    $experience = new Experience(
-      $id,
-      'Titre',
-      'La société',
-      'Ma description',
-      $date1,
-      $date2,
-    );
+    $date1 = $datas->getDate1();
+    $date2 = $datas->getDate2();
+    $id = $datas->getId();
+
 
     $uid = $experience->getUserId();
     $title = $experience->getTitle();

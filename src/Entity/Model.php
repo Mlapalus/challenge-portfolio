@@ -18,6 +18,13 @@ abstract class Model
   public function __construct()
   {
     $this->pdo = \Database::getPdo();
+
+    $arguments = func_get_args();
+    $numberOfArguments = func_num_args();
+
+    if (method_exists($this, $function = '__construct' . $this->table) && $numberOfArguments > 0) {
+      call_user_func_array(array($this, $function), $arguments);
+    }
   }
 
   /**
@@ -50,17 +57,5 @@ abstract class Model
     $query->execute(['id' => $id]);
 
     return $query->fetch();
-  }
-
-  /**
-   * delete
-   *
-   * @param  mixed $id
-   * @return void
-   */
-  public function delete(int $id)
-  {
-    $query = $this->pdo->prepare("DELETE FROM {$this->table} WHERE id = :id");
-    $query->execute(['id' => $id]);
   }
 }

@@ -24,7 +24,7 @@ class Experience extends Model
    *
    * @return void
    */
-  public function __construct(
+  public function __constructEXPERIENCES(
     int $id,
     string $title,
     string $company,
