@@ -1,9 +1,9 @@
 <?php
-$lastName = $params['data']["LAST_NAME"];
-$userName = $params['data']["USERNAME"];
-$firstName = $params['data']["FIRST_NAME"];
-$birthDate = $params['data']["BIRTH_DATE"];
-$description = $params['data']["DESCRIPTION"];
+$lastName = $params['data']["LAST_NAME"] ?: 'Lapalus';
+$userName = $params['data']["USERNAME"] ?: 'MLapalus';
+$firstName = $params['data']["FIRST_NAME"] ?: 'Michel';
+$birthDate = $params['data']["BIRTH_DATE"] ?: date_create();
+$description = $params['data']["DESCRIPTION"] ?: date_create();
 ?>
 
 <div class="card" style="width: 18rem;">
