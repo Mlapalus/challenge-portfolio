@@ -1,18 +1,19 @@
 # PHP - Portfolio learning project
+
 ---
 
 This project goal is to develop a personal portfolio in order to learn PHP without any frameworks and with minimal packages.
 
 **Summary**
 
-- [Instructions](#instructions)
-	- [Requirements](#requirements)
-	- [Architecture](#architecture)
-	- [Helpful commands](#commands)
-	- [Code Review](#code-review)
-	
-- [Subject](#subject)
-	- [Step 1 : Display user information and portfolio from database](#step-1)
+  - [Instructions](#instructions)
+    - [Requirements](#requirements)
+    - [Architecture](#architecture)
+    - [Helpful commands](#commands)
+    - [Code Review](#code-review)
+    
+  - [Subject](#subject)
+    - [Step 1 : Display user information and portfolio from database](#step-1)
 
 ## <a name="instructions">Instructions<a/>
 
@@ -20,8 +21,8 @@ This project goal is to develop a personal portfolio in order to learn PHP witho
 
 Your project must respect the following requirements:
 
-- php >= 7.4
-- composer >= 2.0.7
+  - php >= 7.4
+  - composer >= 2.0.7
 
 ### <a name="architecture">Achitecture</a>
 
@@ -39,7 +40,6 @@ Makefile
 phpunit-watcher.yml
 README.md
 ```
-
 
 You **must only edit** `public/index.php` file and write your code in the `src/` directory (it is your freedom space).
 
@@ -83,7 +83,7 @@ To directly install and run application:
 
 ```bash
 make install-run
-``` 
+```
 
 To directly install, test and run application:
 
@@ -107,9 +107,9 @@ So, **this command must work without any fail**.
 
 To make this part, your should develop three web pages:
 
-- Presentation web page: to present yourself, with your description.
-- Experience and training web page: to explain your professional experiences and formations with dates.
-- Portfolio web page: to present your projects and realisations.
+  - Presentation web page: to present yourself, with your description.
+  - Experience and training web page: to explain your professional experiences and formations with dates.
+  - Portfolio web page: to present your projects and realisations.
 
 All data must come from a MySql database.
 
@@ -117,8 +117,8 @@ All data must come from a MySql database.
 
 You have limited package to build this part:
 
-- twig/twig ^3.0
-- slim/psr7 ^1.2
+  - twig/twig ^3.0
+  - slim/psr7 ^1.2
 
 You don't have to use those packages but **you must not add any production packages**. If you need packages, you only can add them as development packages (`composer install --dev <package>`).
 
