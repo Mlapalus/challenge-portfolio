@@ -22,7 +22,7 @@ class PagesController
     Renderer::render('index', compact('pageTitle', 'data'));
   }
 
-  public function cv()
+  public function curriculumVitae()
   {
 
     $experience = new Experience();

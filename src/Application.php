@@ -13,7 +13,7 @@ class Application
 
     $router = new Router($input->server('REQUEST_URI'));
     $router->get('/', 'App\Controllers\PagesController@index');
-    $router->get('/cv', 'App\Controllers\PagesController@cv');
+    $router->get('/cv', 'App\Controllers\PagesController@curriculumVitae');
     $router->get('/portfolio', 'App\Controllers\PagesController@portfolio');
     $router->run();
   }

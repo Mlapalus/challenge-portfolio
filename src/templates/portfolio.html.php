@@ -6,14 +6,14 @@
   <div class="col">
     <div class="card" style="width: 18rem;">
       <div class="card-header">
-        <strong>Titre: </strong> <?= $value['TITLE'] ?: 'Mon Titre' ?></br>
+        <strong>Titre: </strong> <?= $value['TITLE'] ? htmlspecialchars($value['TITLE']) : 'Mon Titre' ?></br>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Date de création: <?= $value['CREATION_DATE'] ?></li>
-        <li class="list-group-item">Sujet:</br><?= $value['DESCRIPTION'] ?></li>
+        <li class="list-group-item">Date de création: <?= htmlspecialchars($value['CREATION_DATE']) ?></li>
+        <li class="list-group-item">Sujet:</br><?= htmlspecialchars($value['DESCRIPTION']) ?></li>
         <li class="list-group-item">Adresse: </br>
-          <a href="<?= $value['URL'] ?>">
-            <?= $value['URL'] ?>
+          <a href="<?= htmlspecialchars($value['URL']) ?>">
+            <?= htmlspecialchars($value['URL']) ?>
           </a>
         </li>
         <li class="list-group-item">Tags: </br>

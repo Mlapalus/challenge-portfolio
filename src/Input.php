@@ -27,11 +27,7 @@ class Input
   public function checkGlobal($global, $key = null, $default = null)
   {
     if ($key) {
-      if (isset($global[$key])) {
-        return $global[$key];
-      } else {
-        return $default ?: null;
-      }
+      return $global[$key] ?: $default ?: null;
     }
     return $global;
   }

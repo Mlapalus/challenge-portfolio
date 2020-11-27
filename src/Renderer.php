@@ -10,9 +10,9 @@ class Renderer
     ob_start();
     extract($params);
 
-    require('templates/' . $path . '.html.php');
+    require 'templates/' . $path . '.html.php';
     $pageContent = ob_get_clean();
 
-    require('templates/layout.html.php');
+    require 'templates/layout.html.php';
   }
 }

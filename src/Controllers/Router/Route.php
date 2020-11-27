@@ -32,10 +32,8 @@ class Route
     $pathToMatch = "#^$path$#";
     if (preg_match($pathToMatch, $url, $matches)) {
       $this->matches = $matches;
-      return true;
-    } else {
-      return false;
     }
+    return (preg_match($pathToMatch, $url, $matches));
   }
 
   /**
