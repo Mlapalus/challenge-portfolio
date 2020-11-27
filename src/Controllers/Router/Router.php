@@ -2,6 +2,7 @@
 
 namespace App\Controllers\Router;
 
+use App\Input;
 use App\Controllers\Router\Route;
 
 class Router
@@ -38,11 +39,11 @@ class Router
    */
   public function run()
   {
-    if (isset($_SERVER['REQUEST_METHOD'])) {
-      foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
-        if ($route->matches($this->url)) {
-          return $route->execute();
-        }
+    $input = new Input();
+
+    foreach ($this->routes[$input->server('REQUEST_METHOD')] as $route) {
+      if ($route->matches($this->url)) {
+        return $route->execute();
       }
     }
     return header('HTTP/1.0 404 not found');
