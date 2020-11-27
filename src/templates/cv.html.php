@@ -7,15 +7,16 @@
   <div class="col-12">
     <div class="card" style="width: 18rem;">
       <div class="card-header">
-        <strong>Titre: </strong> <?= $value['TITLE'] ?></br>
+        <strong>Titre: </strong> <?= htmlspecialchars($value['TITLE']) ?></br>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Lieux:<?= $value['SCHOOL'] ?></li>
-        <li class="list-group-item">Diplôme:<?= $value['GRADUATE'] ?></li>
-        <li class="list-group-item">Date de début:<?= $value['START_DATE'] ?></li>
-        <li class="list-group-item"><?= $value['END_DATE'] ? 'Date de Fin: ' . $value['END_DATE'] : 'Encore en Poste' ?>
+        <li class="list-group-item">Lieux:<?= htmlspecialchars($value['SCHOOL']) ?></li>
+        <li class="list-group-item">Diplôme:<?= htmlspecialchars($value['GRADUATE']) ?></li>
+        <li class="list-group-item">Date de début:<?= htmlspecialchars($value['START_DATE']) ?></li>
+        <li class="list-group-item">
+          <?= htmlspecialchars($value['END_DATE']) ? 'Date de Fin: ' . htmlspecialchars($value['END_DATE']) : 'Encore en Poste' ?>
         </li>
-        <li class="list-group-item">Sujet:<?= $value['DESCRIPTION'] ?></li>
+        <li class="list-group-item">Sujet:<?= htmlspecialchars($value['DESCRIPTION']) ?></li>
       </ul>
     </div>
   </div>
@@ -31,14 +32,15 @@
   <div class="col-12">
     <div class="card" style="width: 18rem;">
       <div class="card-header">
-        <strong>Titre: </strong> <?= $value['TITLE'] ?></br>
+        <strong>Titre: </strong> <?= htmlspecialchars($value['TITLE']) ?></br>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Société::<?= $value['COMPANY'] ?></li>
-        <li class="list-group-item">Date de début:<?= $value['START_DATE'] ?></li>
-        <li class="list-group-item"><?= $value['END_DATE'] ? 'Date de Fin: ' . $value['END_DATE'] : 'Encore en Poste' ?>
+        <li class="list-group-item">Société::<?= htmlspecialchars($value['COMPANY']) ?></li>
+        <li class="list-group-item">Date de début:<?= htmlspecialchars($value['START_DATE']) ?></li>
+        <li class="list-group-item">
+          <?= htmlspecialchars($value['END_DATE']) ? 'Date de Fin: ' . htmlspecialchars($value['END_DATE']) : 'Encore en Poste' ?>
         </li>
-        <li class="list-group-item">Sujet: </br> <?= $value['DESCRIPTION'] ?></li>
+        <li class="list-group-item">Sujet: </br> <?= htmlspecialchars($value['DESCRIPTION']) ?></li>
       </ul>
     </div>
   </div>

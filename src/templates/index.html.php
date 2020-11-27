@@ -8,13 +8,13 @@ $description = $params['data']["DESCRIPTION"] ?: date_create();
 
 <div class="card" style="width: 18rem;">
   <div class="card-header">
-    <strong>Nom: </strong> <?= $lastName ?></br>
-    <strong>Prenom: </strong> <?= $firstName ?></br>
-    <strong>Surnom: </strong> <?= $userName ?></br>
+    <strong>Nom: </strong> <?= htmlspecialchars($lastName) ?></br>
+    <strong>Prenom: </strong> <?= htmlspecialchars($firstName) ?></br>
+    <strong>Surnom: </strong> <?= htmlspecialchars($userName) ?></br>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Date de Naissance:<?= $birthDate ?></li>
-    <li class="list-group-item">A mon sujet: </br><?= $description ?></li>
+    <li class="list-group-item">Date de Naissance:<?= htmlspecialchars($birthDate) ?></li>
+    <li class="list-group-item">A mon sujet: </br><?= htmlspecialchars($description) ?></li>
   </ul>
 </div>
 
