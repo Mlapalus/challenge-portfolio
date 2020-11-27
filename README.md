@@ -6,13 +6,14 @@ This project goal is to develop a personal portfolio in order to learn PHP witho
 
 **Summary**
 
-  - [Instructions](#instructions)
+- [Instructions](#instructions)
     - [Requirements](#requirements)
     - [Architecture](#architecture)
     - [Helpful commands](#commands)
     - [Code Review](#code-review)
     
-  - [Subject](#subject)
+    
+- [Subject](#subject)
     - [Step 1 : Display user information and portfolio from database](#step-1)
 
 ## <a name="instructions">Instructions<a/>
@@ -21,8 +22,8 @@ This project goal is to develop a personal portfolio in order to learn PHP witho
 
 Your project must respect the following requirements:
 
-  - php >= 7.4
-  - composer >= 2.0.7
+- php >= 7.4
+- composer >= 2.0.7
 
 ### <a name="architecture">Achitecture</a>
 
