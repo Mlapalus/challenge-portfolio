@@ -16,13 +16,13 @@ class PortfolioTags extends Model
   /**
    * __construct
    *
-   * @param  mixed $id
+   * @param  mixed $ident
    * @param  mixed $tag
    * @return void
    */
-  public function __constructPORTFOLIO_TAGS(int $id, string $tag)
+  public function __constructPORTFOLIO_TAGS(int $ident, string $tag)
   {
-    $this->portfolioId = $id;
+    $this->portfolioId = $ident;
     $this->tag = $tag;
   }
 
@@ -34,7 +34,7 @@ class PortfolioTags extends Model
    * @param  mixed $order
    * @return array
    */
-  public function findAll(int $id, ?string $order = ""): array
+  public function findAll(int $ident, ?string $order = ""): array
   {
 
     $sql = "SELECT * FROM {$this->table}";
@@ -60,12 +60,12 @@ class PortfolioTags extends Model
   /**
    * setPortfolioId
    *
-   * @param  mixed $id
+   * @param  mixed $ident
    * @return void
    */
-  public function setPortfolioId(int $id): void
+  public function setPortfolioId(int $ident): void
   {
-    $this->portfolioId = $id;
+    $this->portfolioId = $ident;
   }
 
   /**

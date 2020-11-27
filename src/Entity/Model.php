@@ -33,10 +33,10 @@ abstract class Model
    * @param  mixed $order
    * @return array
    */
-  public function findAll(int $id, ?string $order = ""): array
+  public function findAll(int $ident, ?string $order = ""): array
   {
 
-    $sql = "SELECT * FROM {$this->table}" . " WHERE USER_ID = {$id}";
+    $sql = "SELECT * FROM {$this->table}" . " WHERE USER_ID = {$ident}";
     if ($order) {
       $sql .= " ORDER BY " . $order;
     }
@@ -47,13 +47,13 @@ abstract class Model
   /**
    * find
    *
-   * @param  mixed $id
+   * @param  mixed $ident
    */
-  public function find(int $id)
+  public function find(int $ident)
   {
     $query = $this->pdo->prepare("SELECT * FROM {$this->table} WHERE id = :id");
 
-    $query->execute(['id' => $id]);
+    $query->execute(['id' => $ident]);
 
     return $query->fetch();
   }

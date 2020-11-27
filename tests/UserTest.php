@@ -37,8 +37,8 @@ class UserTest extends TestCase
   public function testReadOneUserOnDatabase()
   {
     $user = new User();
-    $id = 1;
-    $result = $user->find($id);
+    $ident = 1;
+    $result = $user->find($ident);
     $this->assertEquals('Lapalus', $result['LAST_NAME']);
   }
 }

@@ -16,7 +16,7 @@ class FormationTest extends TestCase
 
     $date1 = $datas->getDate1();
     $date2 = $datas->getDate2();
-    $id = $datas->getId();
+    $ident = $datas->getId();
 
 
     $uid = $formation->getUserId();
@@ -27,7 +27,7 @@ class FormationTest extends TestCase
     $endDate = $formation->getEndDate();
     $content = $formation->getDescription();
 
-    $this->assertEquals($id, $uid);
+    $this->assertEquals($ident, $uid);
     $this->assertEquals('Title', $title);
     $this->assertEquals('Mon Ecole', $school);
     $this->assertEquals('Mon Diplome', $graduate);

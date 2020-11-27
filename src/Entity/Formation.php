@@ -49,12 +49,12 @@ class Formation extends Model
   /**
    * setUserId
    *
-   * @param  mixed $id
+   * @param  mixed $ident
    * @return void
    */
-  public function setUserId(int $id): void
+  public function setUserId(int $ident): void
   {
-    $this->userId = $id;
+    $this->userId = $ident;
   }
 
   /**

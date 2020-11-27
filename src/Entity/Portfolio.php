@@ -24,13 +24,13 @@ class Portfolio extends Model
    * @return void
    */
   public function __constructPORTFOLIO(
-    int $id,
+    int $ident,
     string $title,
     DateTime $createdDate,
     string $description,
     string $url
   ) {
-    $this->userId = $id;
+    $this->userId = $ident;
     $this->title = $title;
     $this->createdDate = $createdDate;
     $this->description = $description;
@@ -41,12 +41,12 @@ class Portfolio extends Model
   /**
    * setId
    *
-   * @param  mixed $id
+   * @param  mixed $ident
    * @return void
    */
-  public function setId(string $id)
+  public function setId(string $ident)
   {
-    $this->userId = $id;
+    $this->userId = $ident;
   }
 
   /**

@@ -12,7 +12,7 @@ class PortfolioTest extends TestCase
 
     $datas = new Datas;
     $portfolio = $datas->getPortfolio();
-    $id = $datas->getId();
+    $ident = $datas->getId();
     $date = $datas->getDate1();
 
 
@@ -22,7 +22,7 @@ class PortfolioTest extends TestCase
     $content = $portfolio->getDescription();
     $url = $portfolio->getUrl();
 
-    $this->assertEquals($id, $uid);
+    $this->assertEquals($ident, $uid);
     $this->assertEquals('Titre', $title);
     $this->assertEquals($date, $createdDate);
     $this->assertEquals('La description', $content);

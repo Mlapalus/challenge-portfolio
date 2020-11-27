@@ -15,7 +15,7 @@ class ExperienceTest extends TestCase
 
     $date1 = $datas->getDate1();
     $date2 = $datas->getDate2();
-    $id = $datas->getId();
+    $ident = $datas->getId();
 
 
     $uid = $experience->getUserId();
@@ -25,7 +25,7 @@ class ExperienceTest extends TestCase
     $endDate = $experience->getEndDate();
     $content = $experience->getDescription();
 
-    $this->assertEquals($id, $uid);
+    $this->assertEquals($ident, $uid);
     $this->assertEquals('Titre', $title);
     $this->assertEquals('La société', $company);
     $this->assertEquals($date1, $startDate);

@@ -25,14 +25,14 @@ class Experience extends Model
    * @return void
    */
   public function __constructEXPERIENCES(
-    int $id,
+    int $ident,
     string $title,
     string $company,
     string $description,
     DateTime $startDate,
     DateTime $endDate
   ) {
-    $this->userId = $id;
+    $this->userId = $ident;
     $this->title = $title;
     $this->company = $company;
     $this->description = $description;
@@ -44,12 +44,12 @@ class Experience extends Model
   /**
    * setUserId
    *
-   * @param  mixed $id
+   * @param  mixed $ident
    * @return void
    */
-  public function setUserId(int $id): void
+  public function setUserId(int $ident): void
   {
-    $this->userId = $id;
+    $this->userId = $ident;
   }
 
   /**

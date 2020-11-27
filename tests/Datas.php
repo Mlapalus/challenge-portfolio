@@ -20,7 +20,7 @@ class Datas
   private $formation;
   private $portfolio;
   private $portfolioTags;
-  private $id;
+  private $ident;
   private $date1;
   private $date2;
   private $tag;
